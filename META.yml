@@ -1,5 +1,5 @@
 ---
-abstract: 'Dump anything in a single line less than 100 characters'
+abstract: 'Dump anything in a single line less than 80 characters'
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:

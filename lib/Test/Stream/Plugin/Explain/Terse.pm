@@ -6,13 +6,22 @@ package Test::Stream::Plugin::Explain::Terse;
 
 our $VERSION = '0.001000';
 
-# ABSTRACT: Dump anything in a single line less than 100 characters
+# ABSTRACT: Dump anything in a single line less than 80 characters
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Test::Stream::Exporter qw/ default_exports import /;
 
 default_exports qw/ explain_terse /;
+
+
+
+
+
+
+
+
+
 
 sub explain_terse {
   return q[];
@@ -28,7 +37,7 @@ __END__
 
 =head1 NAME
 
-Test::Stream::Plugin::Explain::Terse - Dump anything in a single line less than 100 characters
+Test::Stream::Plugin::Explain::Terse - Dump anything in a single line less than 80 characters
 
 =head1 VERSION
 
@@ -118,6 +127,15 @@ Or
 
 And have C<Explain::Terse> operating transparently under the hood of these implementations
 so you can see what is happening.
+
+=head1 FUNCTIONS
+
+=head2 C<explain_terse>
+
+  my $data = explain_terse($structure);
+
+Returns C<$structure> pretty printed and compacted to be less than 80
+characters long.
 
 =head1 AUTHOR
 

@@ -1,5 +1,5 @@
 {
-   "abstract" : "Dump anything in a single line less than 100 characters",
+   "abstract" : "Dump anything in a single line less than 80 characters",
    "author" : [
       "Kent Fredric <kentnl@cpan.org>"
    ],
@@ -450,22 +450,7 @@
                      },
                      {
                         "class" : "Pod::Weaver::Section::Collect",
-                        "name" : "METHODS",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Collect",
-                        "name" : "ATTRIBUTES",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Collect",
-                        "name" : "PRIVATE_ATTRIBUTES",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Collect",
-                        "name" : "PRIVATE_METHODS",
+                        "name" : "FUNCTIONS",
                         "version" : "4.012"
                      },
                      {
