@@ -25,6 +25,7 @@ my %WriteMakefileArgs = (
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
     "Test::More" => "0.89",
+    "Test::Stream" => 0,
     "Test::Stream::Bundle::V1" => 0,
     "Text::Wrap" => 0
   },
@@ -39,6 +40,7 @@ my %FallbackPrereqs = (
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Test::More" => "0.89",
+  "Test::Stream" => 0,
   "Test::Stream::Bundle::V1" => 0,
   "Test::Stream::Exporter" => 0,
   "Text::Wrap" => 0,
