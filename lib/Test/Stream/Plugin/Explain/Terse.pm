@@ -10,13 +10,12 @@ our $VERSION = '0.001000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Test::Stream::Exporter;
+use Test::Stream::Exporter qw/ default_exports import /;
 
 default_exports qw/ explain_terse /;
 
 sub explain_terse {
-  my ($value) = @_;
-  return "";
+  return q[];
 }
 
 1;
