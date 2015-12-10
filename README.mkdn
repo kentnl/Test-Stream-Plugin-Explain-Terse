@@ -1,6 +1,6 @@
 # NAME
 
-Test::Stream::Plugin::Explain::Terse - Dump anything in a single line less than 100 characters
+Test::Stream::Plugin::Explain::Terse - Dump anything in a single line less than 80 characters
 
 # VERSION
 
@@ -90,6 +90,15 @@ Or
 
 And have `Explain::Terse` operating transparently under the hood of these implementations
 so you can see what is happening.
+
+# FUNCTIONS
+
+## `explain_terse`
+
+    my $data = explain_terse($structure);
+
+Returns `$structure` pretty printed and compacted to be less than 80
+characters long.
 
 # AUTHOR
 
