@@ -15,7 +15,8 @@ use Test::Stream::Exporter;
 default_exports qw/ explain_terse /;
 
 sub explain_terse {
-
+  my ($value) = @_;
+  return "";
 }
 
 1;
