@@ -8,7 +8,7 @@ build_requires:
   Test::More: '0.89'
   Test::Stream: '0'
   Test::Stream::Bundle::V1: '0'
-  Text::Wrap: '0'
+  Test::Stream::Plugin::SRand: '0'
   perl: '5.006'
 configure_requires:
   ExtUtils::MakeMaker: '0'
@@ -25,6 +25,7 @@ provides:
     file: lib/Test/Stream/Plugin/Explain/Terse.pm
     version: '0.001000'
 requires:
+  Data::Dump: '0'
   Test::Stream::Exporter: '0'
   perl: '5.006'
   strict: '0'

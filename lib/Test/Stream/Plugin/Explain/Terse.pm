@@ -11,6 +11,7 @@ our $VERSION = '0.001000';
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Test::Stream::Exporter qw/ default_exports import /;
+use Data::Dump qw( pp );
 
 default_exports qw/ explain_terse /;
 
@@ -23,8 +24,18 @@ default_exports qw/ explain_terse /;
 
 
 
+our $MAX_LENGTH = 80;
+our $LEFT_CHARS = 1;
+our $ELIDED     = "...";
+
 sub explain_terse {
-  return q[];
+  my $content = pp( $_[0] );    # note: using this for now because of list compression
+  $content =~ s/\n//g;          # nuke literal newlines.
+  return $content if length $content <= $MAX_LENGTH;
+
+  return ( substr $content, 0, $MAX_LENGTH - ( length $ELIDED ) - $LEFT_CHARS ) . $ELIDED
+    . ( substr $content, ( length $content ) - $LEFT_CHARS );
+
 }
 
 1;
