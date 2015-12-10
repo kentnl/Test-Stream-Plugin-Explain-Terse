@@ -6,6 +6,8 @@ build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
   Test::More: '0.89'
+  Test::Stream::Bundle::V1: '0'
+  Text::Wrap: '0'
   perl: '5.006'
 configure_requires:
   ExtUtils::MakeMaker: '0'

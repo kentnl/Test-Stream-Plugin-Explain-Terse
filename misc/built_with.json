@@ -1,4 +1,7 @@
 {
+   "failures" : {
+      "Test::Stream::Bundle::V1" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.22.0/lib/site_perl/5.22.0/Test/Stream/Bundle/V1.pm"
+   },
    "modules" : {
       "CPAN::Meta" : "2.150005",
       "Dist::Zilla" : "5.041",
@@ -65,6 +68,7 @@
       "Test::More" : "1.001014",
       "Test::Pod" : "1.51",
       "Test::Pod::Coverage" : "1.10",
+      "Text::Wrap" : "2013.0523",
       "strict" : "1.09",
       "warnings" : "1.32"
    },

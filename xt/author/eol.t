@@ -10,7 +10,8 @@ my @files = (
     'lib/Test/Stream/Plugin/Explain/Terse.pm',
     't/00-compile/lib_Test_Stream_Plugin_Explain_Terse_pm.t',
     't/00-report-prereqs.dd',
-    't/00-report-prereqs.t'
+    't/00-report-prereqs.t',
+    't/basic.t'
 );
 
 eol_unix_ok($_, { trailing_whitespace => 1 }) foreach @files;
