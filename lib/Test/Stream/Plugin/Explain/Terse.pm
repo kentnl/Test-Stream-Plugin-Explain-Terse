@@ -10,6 +10,14 @@ our $VERSION = '0.001000';
 
 # AUTHORITY
 
+use Test::Stream::Exporter;
+
+default_exports qw/ explain_terse /;
+
+sub explain_terse {
+
+}
+
 1;
 
 =head1 DESCRIPTION
