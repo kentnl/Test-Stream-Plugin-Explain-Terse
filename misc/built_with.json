@@ -1,6 +1,7 @@
 {
    "failures" : {
-      "Test::Stream::Bundle::V1" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.22.0/lib/site_perl/5.22.0/Test/Stream/Bundle/V1.pm"
+      "Test::Stream::Bundle::V1" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.22.0/lib/site_perl/5.22.0/Test/Stream/Bundle/V1.pm",
+      "Test::Stream::Exporter" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.22.0/lib/site_perl/5.22.0/Test/Stream/Exporter.pm"
    },
    "modules" : {
       "CPAN::Meta" : "2.150005",

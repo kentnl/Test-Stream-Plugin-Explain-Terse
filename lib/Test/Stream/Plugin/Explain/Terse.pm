@@ -10,6 +10,14 @@ our $VERSION = '0.001000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
+use Test::Stream::Exporter;
+
+default_exports qw/ explain_terse /;
+
+sub explain_terse {
+
+}
+
 1;
 
 __END__

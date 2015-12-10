@@ -17,6 +17,7 @@ my %WriteMakefileArgs = (
   "MIN_PERL_VERSION" => "5.006",
   "NAME" => "Test::Stream::Plugin::Explain::Terse",
   "PREREQ_PM" => {
+    "Test::Stream::Exporter" => 0,
     "strict" => 0,
     "warnings" => 0
   },
@@ -39,6 +40,7 @@ my %FallbackPrereqs = (
   "File::Spec" => 0,
   "Test::More" => "0.89",
   "Test::Stream::Bundle::V1" => 0,
+  "Test::Stream::Exporter" => 0,
   "Text::Wrap" => 0,
   "strict" => 0,
   "warnings" => 0

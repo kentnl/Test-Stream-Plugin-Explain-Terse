@@ -24,6 +24,7 @@ provides:
     file: lib/Test/Stream/Plugin/Explain/Terse.pm
     version: '0.001000'
 requires:
+  Test::Stream::Exporter: '0'
   perl: '5.006'
   strict: '0'
   warnings: '0'
