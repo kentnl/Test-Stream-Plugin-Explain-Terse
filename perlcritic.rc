@@ -9,7 +9,7 @@ verbose = 9
 
 [Bangs::ProhibitCommentedOutCode]
 
-[Bangs::ProhibitDebuggingModules]
+[-Bangs::ProhibitDebuggingModules]
 
 [-Bangs::ProhibitFlagComments]
 
@@ -335,7 +335,7 @@ private_name_regex = _(?!build_)\w
 
 [Subroutines::ProtectPrivateSubs]
 
-[Subroutines::RequireArgUnpacking]
+[-Subroutines::RequireArgUnpacking]
 
 [Subroutines::RequireFinalReturn]
 
