@@ -1,7 +1,8 @@
 use strict;
 use warnings;
 
-use Test::Stream::Bundle::V1 'Explain::Terse' => [];
+use Test::Stream::Bundle::V1;
+use Test::Stream::Plugin::Explain::Terse;
 use Text::Wrap;
 
 # ABSTRACT: Basic self-test
