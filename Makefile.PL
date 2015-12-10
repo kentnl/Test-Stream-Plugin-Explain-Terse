@@ -23,7 +23,9 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
-    "Test::More" => "0.89"
+    "Test::More" => "0.89",
+    "Test::Stream::Bundle::V1" => 0,
+    "Text::Wrap" => 0
   },
   "VERSION" => "0.001000",
   "test" => {
@@ -36,6 +38,8 @@ my %FallbackPrereqs = (
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "Test::More" => "0.89",
+  "Test::Stream::Bundle::V1" => 0,
+  "Text::Wrap" => 0,
   "strict" => 0,
   "warnings" => 0
 );
