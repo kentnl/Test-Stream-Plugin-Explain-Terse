@@ -8,7 +8,7 @@ use Test::Stream::Plugin::Explain::Terse;
 
 can_ok( __PACKAGE__, 'explain_terse' );
 
-ok( defined( my $result = explain_terse("") ), "explain_terse must return a defined value" );
+ok( defined( explain_terse("") ), "explain_terse must return a defined value" );
 
 is( explain_terse("Hello"), '"Hello"', 'short values dump-pass through OK' );
 
