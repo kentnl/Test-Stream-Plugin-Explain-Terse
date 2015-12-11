@@ -12,12 +12,8 @@ use Test::Stream::Exporter qw/import default_export/;
 
 default_export qw/grapheme_str/;
 
-my ( @CONS, @VOLS );
-
-BEGIN {
-  @CONS = qw( B C D F G H J K L M N P Q R S T V W X Y Z );
-  @VOLS = qw( a e i o u );
-}
+my (@CONS) = qw( B C D F G H J K L M N P Q R S T V W X Y Z );
+my (@VOLS) = qw( a e i o u );
 
 sub mk_grapheme {
   $CONS[ int( rand() * $#CONS ) ] . $VOLS[ int( rand() * $#VOLS ) ];
