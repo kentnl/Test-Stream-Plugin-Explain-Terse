@@ -14,7 +14,8 @@ my @files = (
     't/basic.t',
     't/bundle_import.t',
     't/lib/T/Grapheme.pm',
-    't/stream_import.t'
+    't/stream_import.t',
+    't/string_short.t'
 );
 
 eol_unix_ok($_, { trailing_whitespace => 1 }) foreach @files;
