@@ -22,19 +22,6 @@ is( explain_terse("Hello"), '"Hello"', 'short values dump-pass through OK' );
 # "N" x $n  back into a short expression!
 my $superstring = grapheme_str(100);
 
-subtest "dumped string would be 80 or less normally" => sub {
-  my $sub_long = substr( $superstring, 0, 80 - 2 );    # minus 2 because pp adds quotes.
-  my $pp       = pp($sub_long);
-  my $got      = explain_terse($sub_long);
-
-  note "Studying: $got";
-  note "From: $pp (=" . ( length $pp ) . ")";
-
-  ok( defined $got, 'is defined' ) or last;
-  cmp_ok( length $got, '<=', 80, "Length <= 80" ) or last;
-  is( $got, qq["$sub_long"], 'dumps under MAX_LENGTH pass through OK' ) or last;
-};
-
 subtest "dumped string would be >80 normally" => sub {
   my $super_long      = substr( $superstring, 0, 81 - 2 );
   my $super_long_wrap = substr( $superstring, 0, 80 - 2 - 3 );    # minus 3 for elipsis
@@ -51,5 +38,4 @@ subtest "dumped string would be >80 normally" => sub {
   is( $got, qq["$super_long_wrap..."], 'dumps over MAX_LENGTH warp as expected' ) or last;
 };
 done_testing;
-
 
