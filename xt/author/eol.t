@@ -15,6 +15,7 @@ my @files = (
     't/bundle_import.t',
     't/lib/T/Grapheme.pm',
     't/stream_import.t',
+    't/string_long.t',
     't/string_short.t'
 );
 
