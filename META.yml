@@ -9,6 +9,7 @@ build_requires:
   Test::Stream: '0'
   Test::Stream::Bundle::V1: '0'
   Test::Stream::Plugin::SRand: '0'
+  Test::Stream::Plugin::Subtest: '0'
   perl: '5.006'
 configure_requires:
   ExtUtils::MakeMaker: '0'

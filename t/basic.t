@@ -4,6 +4,7 @@ use warnings;
 use Test::Stream::Bundle::V1;
 use Test::Stream::Plugin::Explain::Terse;
 use Test::Stream::Plugin::SRand;
+use Test::Stream::Plugin::Subtest;
 use Data::Dump qw(pp);
 
 # ABSTRACT: Basic self-test
@@ -18,32 +19,34 @@ is( explain_terse("Hello"), '"Hello"', 'short values dump-pass through OK' );
 # "N" x $n  back into a short expression!
 my $superstring = join q[], map { mk_grapheme() } 0 .. 50;
 
-my $sub_long        = substr( $superstring, 0, 80 - 2 );        # minus 2 because pp adds quotes.
-my $super_long      = substr( $superstring, 0, 81 - 2 );
-my $super_long_wrap = substr( $superstring, 0, 80 - 2 - 3 );    # minus 3 for elipsis
+subtest "dumped string would be 80 or less normally" => sub {
+  my $sub_long = substr( $superstring, 0, 80 - 2 );    # minus 2 because pp adds quotes.
+  my $pp       = pp($sub_long);
+  my $got      = explain_terse($sub_long);
 
-{
-  my $pp = pp($sub_long);
-  note "length(pp(item)) <= 80:" . $pp . "=" . length($pp);
-}
-for ( explain_terse($sub_long) ) {
-  note $_;
-  ok( defined, 'is defined' ) or last;
-  cmp_ok( length, '<=', 80, "Length <= 80" ) or last;
-  is( $_, qq["$sub_long"], 'dumps under MAX_LENGTH pass through OK' ) or last;
-}
-{
-  my $pp = pp($super_long);
-  note "length(pp(item)) > 80:" . $pp . "=" . length($pp);
-}
-for ( explain_terse($super_long) ) {
-  note $_;
-  ok( defined, 'is defined' ) or last;
-  cmp_ok( length, '<=', 80, "Length <= 80" ) or last;
-  cmp_ok( $_, 'ne', qq["$sub_long"], 'dumps over MAX_LENGTH do not go unmolested' ) or last;
-  is( $_, qq["$super_long_wrap..."], 'dumps over MAX_LENGTH warp as expected' ) or last;
-}
+  note "Studying: $got";
+  note "From: $pp (=" . ( length $pp ) . ")";
 
+  ok( defined $got, 'is defined' ) or last;
+  cmp_ok( length $got, '<=', 80, "Length <= 80" ) or last;
+  is( $got, qq["$sub_long"], 'dumps under MAX_LENGTH pass through OK' ) or last;
+};
+
+subtest "dumped string would be >80 normally" => sub {
+  my $super_long      = substr( $superstring, 0, 81 - 2 );
+  my $super_long_wrap = substr( $superstring, 0, 80 - 2 - 3 );    # minus 3 for elipsis
+
+  my $pp  = pp($super_long);
+  my $got = explain_terse($super_long);
+
+  note "Studying: $got";
+  note "From: $pp (=" . ( length $pp ) . ")";
+
+  ok( defined $got, 'is defined' ) or last;
+  cmp_ok( length $got, '<=', 80, "Length <= 80" ) or last;
+  cmp_ok( $got, 'ne', qq["$super_long"], 'dumps over MAX_LENGTH do not go unmolested' ) or last;
+  is( $got, qq["$super_long_wrap..."], 'dumps over MAX_LENGTH warp as expected' ) or last;
+};
 done_testing;
 
 my ( @CONS, @VOLS );
