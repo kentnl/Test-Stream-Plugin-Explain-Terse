@@ -13,6 +13,7 @@ my @files = (
     't/00-report-prereqs.t',
     't/basic.t',
     't/bundle_import.t',
+    't/lib/T/Grapheme.pm',
     't/stream_import.t'
 );
 
