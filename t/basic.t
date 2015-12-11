@@ -7,6 +7,9 @@ use Test::Stream::Plugin::SRand;
 use Test::Stream::Plugin::Subtest;
 use Data::Dump qw(pp);
 
+use lib 't/lib';
+use T::Grapheme qw/grapheme_str/;
+
 # ABSTRACT: Basic self-test
 
 can_ok( __PACKAGE__, 'explain_terse' );
@@ -17,7 +20,7 @@ is( explain_terse("Hello"), '"Hello"', 'short values dump-pass through OK' );
 
 # These have to be random strings because Data::Dump is smart enough to reverse
 # "N" x $n  back into a short expression!
-my $superstring = join q[], map { mk_grapheme() } 0 .. 50;
+my $superstring = grapheme_str(100);
 
 subtest "dumped string would be 80 or less normally" => sub {
   my $sub_long = substr( $superstring, 0, 80 - 2 );    # minus 2 because pp adds quotes.
@@ -49,11 +52,4 @@ subtest "dumped string would be >80 normally" => sub {
 };
 done_testing;
 
-my ( @CONS, @VOLS );
 
-BEGIN {
-  @CONS = qw( B C D F G H J K L M N P Q R S T V W X Y Z );
-  @VOLS = qw( a e i o u );
-}
-
-sub mk_grapheme { $CONS[ int( rand() * $#CONS ) ] . $VOLS[ int( rand() * $#VOLS ) ] }
