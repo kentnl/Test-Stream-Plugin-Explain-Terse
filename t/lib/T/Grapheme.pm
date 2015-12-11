@@ -28,3 +28,13 @@ sub grapheme_str {
 }
 1;
 
+=head1 DESCRIPTION
+
+This utility exists for testing because Data::Dump is actually too smart about
+compressing strings and will detect anyone using the `x` operator and reverse
+the resulting string back into the form
+
+  ( "Str" x $n )
+
+So this utility creates long strings of random but visually easy to check
+strings to throw code at.
