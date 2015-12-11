@@ -30,7 +30,7 @@ our $ELIDED     = q[...];
 
 sub explain_terse {
   my $content = pp( $_[0] );    # note: using this for now because of list compression
-  $content =~ s/\n//sxg;          # nuke literal newlines.
+  $content =~ s/\n//sxg;        # nuke literal newlines.
   return $content if length $content <= $MAX_LENGTH;
 
   return ( substr $content, 0, $MAX_LENGTH - ( length $ELIDED ) - $LEFT_CHARS ) . $ELIDED
@@ -53,11 +53,6 @@ Test::Stream::Plugin::Explain::Terse - Dump anything in a single line less than 
 =head1 VERSION
 
 version 0.001000
-
-=head1 SYNOPSIS
-
-  use Test::Stream::Bundle::V1;
-  use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
 
 =head1 DESCRIPTION
 
