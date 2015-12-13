@@ -124,3 +124,14 @@ Or
 
 And have C<Explain::Terse> operating transparently under the hood of these implementations
 so you can see what is happening.
+
+=head1 SYNOPSIS
+
+  use Test::Stream::Bundle::V1;
+  use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
+
+  note "Studying: fn(y) = " . explain_terse(my $got = fn($y));
+
+  # test $got
+
+  done_testing;
