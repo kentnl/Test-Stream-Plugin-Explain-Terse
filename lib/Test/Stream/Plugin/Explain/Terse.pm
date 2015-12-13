@@ -59,14 +59,10 @@ version 0.001000
   use Test::Stream::Bundle::V1;
   use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
 
-  {
-    my $got    = fn( $y );
-    note "fn(y) is x";
-    note "Studying: fn(y) = " . explain_terse($got);
+  note "Studying: fn(y) = " . explain_terse(my $got = fn($y));
 
-    ok( defined $got, 'is defined' ) or last;
-    # more tests here
-  }
+  # test $got
+  
   done_testing;
 
 =head1 DESCRIPTION
