@@ -21,6 +21,7 @@ $bundle->configure;
 my @stopwords = (
   qw(
     de INTEROP formatter operability
+    uncondensed
     )
 );
 for my $wordlist (@stopwords) {
