@@ -62,7 +62,7 @@ version 0.001000
   note "Studying: fn(y) = " . explain_terse(my $got = fn($y));
 
   # test $got
-  
+
   done_testing;
 
 =head1 DESCRIPTION
