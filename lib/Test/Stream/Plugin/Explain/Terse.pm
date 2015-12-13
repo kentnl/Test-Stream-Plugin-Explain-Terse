@@ -54,6 +54,21 @@ Test::Stream::Plugin::Explain::Terse - Dump anything in a single line less than 
 
 version 0.001000
 
+=head1 SYNOPSIS
+
+  use Test::Stream::Bundle::V1;
+  use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
+
+  {
+    my $got    = fn( $y );
+    note "fn(y) is x";
+    note "Studying: fn(y) = " . explain_terse($got);
+    
+    ok( defined $got, 'is defined' ) or last;
+    # more tests here
+  }
+  done_testing;
+
 =head1 DESCRIPTION
 
 This module aims to provide a simple tool for adding trace-level details
