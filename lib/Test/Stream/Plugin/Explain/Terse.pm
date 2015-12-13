@@ -135,3 +135,127 @@ so you can see what is happening.
   # test $got
 
   done_testing;
+
+=head1 FUTURE STABILITY
+
+=head2 C<Test::Stream>
+
+This module intends to inter-operate with L<< C<Test::Stream>|Test::Stream >>
+which this modules author considers still in a heavy state of flux, and so this
+module cannot be considered even remotely stable until some point after that
+becoming more stable.
+
+=head2 C<Dumper> internals.
+
+This module presently uses L<< C<pp> from C<Data::Dump>|Data::Dump/pp >> as its
+main formatter bolted into some simple sub-string operations and newline
+transformations.
+
+It is planned that this module will switch to using
+L<< C<Data::Dumper>|Data::Dumper >> at some future time, pending on its
+addition of features like range-list reductions, and other niceties
+C<Data::Dump> offers.
+
+Alas, C<Data::Dump> doesn't support C<sub> de-parsing, and C<Data::Dump> doesn't
+have internals that could be considered a canonical reference implementation
+C<Data::Dumper> is.
+
+So as soon as C<Data::Dumper> has all the features this module wants, it will
+switch.
+
+But you shouldn't be relying on the output of this module having a fixed string
+representation anyway, its I<purely> for human consumption.
+
+=head2 Controlled Non-Terse Dumping
+
+Two features here could be useful, but I'm still working out how to do it
+nicely.
+
+=over 4
+
+=item * It would be nice to stash C<diag> traces in a context and then reveal
+the entire leg of the test prior to the failure, but only on failure, such that
+when you were just reading a passing TAP series it wasn't burdensome, but when
+failures occurred you got all the details you needed still.
+
+=item * Conditionally C<diag>ing in full uncondensed form might eventually be a
+feature at user request.
+
+=back
+
+And the above two in conjunction could be really handy.
+
+=head1 INTEROP WITH TEST::STREAM ECOSYSTEM
+
+=head2 IMPORT STYLE
+
+The author of C<Test::Stream> presently indicates their preferred way of
+consuming plugins like this one would be as follows:
+
+  use Test::Stream -V1, 'Explain::Terse';
+
+The author of this module finds such a style confusing an unclear to new users
+and finds it seriously impedes automatic prerequisite detection.
+
+  use Test::Stream::Bundle::V1, 'Explain::Terse';
+
+This style is less confusing, but not yet perfectly clear.
+
+  use Test::Stream::Bundle::V1;
+  use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
+
+is much more obvious what is happening.
+
+=head2 EXPORTER
+
+This module presently uses
+L<< C<Test::Stream::Exporter>|Test::Stream::Exporter >> as its exporter
+library. This is for inter-operability with the C<Test::Stream> bundling system
+which allows for bundles to compose multiple plugins into a single calling
+class.
+
+This technique requires a bit of indirection, and requires allowing the
+bundle to clearly communicate the name of the bundles caller to its composed
+plugins while allowing plugins to augment that callers name-space directly.
+
+But to facilitate this, a specific non-C<import> interface must exist on the
+plugin which the C<Test::Stream> infrastructure can use to permit explicit
+passing of C<caller()> data without needing to pull cute tricks like
+locally redefining C<caller()> like C<Sub::Uplevel>, or imposing limitations
+on the C<< ->import(@ARGS) >> syntax, and avoids needing to do strange import
+tricks like C<Import::Into> does with C<eval>.
+
+L<< C<Test::Stream@1.302026>|https://metacpan.org/source/EXODIST/Test-Stream-1.302026/lib/Test/Stream.pm >>
+
+  020: sub import {
+  021:   my $class = shift;
+  022:   my @caller = caller;
+  023:
+  024:   push @_ => $class->default unless @_;
+  025:
+  026:   $class->load(\@caller, @_);
+  027:
+  028:   1;
+  029: }
+  030: sub load {
+  ...
+  140: if ($mod->can('load_ts_plugin')) {
+  141:   $mod->load_ts_plugin($caller, @$import);
+  142: }
+  143: elsif (my $meta = Test::Stream::Exporter::Meta->get($mod)) {
+  144:   Test::Stream::Exporter::export_from($mod, $caller->[0], $import);
+  145: }
+
+L<< C<Test::Stream::Bundle@1.302026>|https://metacpan.org/source/EXODIST/Test-Stream-1.302026/lib/Test/Stream/Bundle.pm >>
+
+  09: default_export import => sub {
+  10:    my $class = shift;
+  11:    my @caller = caller;
+  12:
+  13:    my $bundle = $class;
+  14:    $bundle =~ s/^Test::Stream::Bundle::/-/;
+  15:
+  16:    require Test::Stream;
+  17:    Test::Stream->load(\@caller, $bundle, @_);
+  18: };
+
