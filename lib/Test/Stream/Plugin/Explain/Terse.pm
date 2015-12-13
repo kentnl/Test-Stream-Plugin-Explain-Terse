@@ -6,7 +6,7 @@ package Test::Stream::Plugin::Explain::Terse;
 
 our $VERSION = '0.001000';
 
-# ABSTRACT: Dump anything in a single line less than 80 characters
+# ABSTRACT: Dump anything in a single line in 80 characters or fewer
 
 # AUTHORITY
 

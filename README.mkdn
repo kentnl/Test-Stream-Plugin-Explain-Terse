@@ -1,6 +1,6 @@
 # NAME
 
-Test::Stream::Plugin::Explain::Terse - Dump anything in a single line less than 80 characters
+Test::Stream::Plugin::Explain::Terse - Dump anything in a single line in 80 characters or fewer
 
 # VERSION
 
