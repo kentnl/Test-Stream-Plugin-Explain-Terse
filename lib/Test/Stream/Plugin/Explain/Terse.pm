@@ -24,17 +24,17 @@ characters long.
 
 =cut
 
-my $MAX_LENGTH  = 80;
-my $RIGHT_CHARS = 1;
-my $ELIDED      = q[...];
+use constant MAX_LENGTH  => 80;
+use constant RIGHT_CHARS => 1;
+use constant ELIDED      => q[...];
 
 sub explain_terse {
   my $content = pp( $_[0] );    # note: using this for now because of list compression
   $content =~ s/\n//sxg;        # nuke literal newlines.
-  return $content if length $content <= $MAX_LENGTH;
+  return $content if length $content <= MAX_LENGTH;
 
-  return ( substr $content, 0, $MAX_LENGTH - ( length $ELIDED ) - $RIGHT_CHARS ) . $ELIDED
-    . ( substr $content, ( length $content ) - $RIGHT_CHARS );
+  return ( substr $content, 0, MAX_LENGTH - ( length ELIDED ) - RIGHT_CHARS ) . ELIDED
+    . ( substr $content, ( length $content ) - RIGHT_CHARS );
 
 }
 
