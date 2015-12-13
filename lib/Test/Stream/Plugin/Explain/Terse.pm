@@ -31,8 +31,8 @@ use constant RIGHT_CHARS => 1;
 use constant ELIDED      => q[...];
 
 sub explain_terse {
-  my $content = pp( $_[0] );    # note: using this for now because of list compression
-  $content =~ s/\n//sxg;        # nuke literal newlines.
+  my $content = pp( $_[0] );       # note: using this for now because of list compression
+  $content =~ s/\s*\n\s*/ /sxg;    # nuke literal newlines and swallow excess space.
   return $content if length $content <= MAX_LENGTH;
 
   return ( substr $content, 0, MAX_LENGTH - ( length ELIDED ) - RIGHT_CHARS ) . ELIDED
