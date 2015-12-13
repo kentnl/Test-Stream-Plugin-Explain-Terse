@@ -72,6 +72,7 @@
       "Test::Pod" : "1.51",
       "Test::Pod::Coverage" : "1.10",
       "Test::Stream" : "1.302026",
+      "constant" : "1.33",
       "lib" : "0.63",
       "strict" : "1.09",
       "warnings" : "1.32"
