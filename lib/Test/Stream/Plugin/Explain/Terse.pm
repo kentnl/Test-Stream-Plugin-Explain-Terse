@@ -189,6 +189,25 @@ switch.
 But you shouldn't be relying on the output of this module having a fixed string
 representation anyway, its I<purely> for human consumption.
 
+=head2 Controlled Non-Terse Dumping
+
+Two features here could be useful, but I'm still working out how to do it
+nicely.
+
+=over 4
+
+=item * It would be nice to stash diag traces in a context and then reveal
+the entire leg of the test prior to the failure, but only on failure, such that
+when you were just reading a passing TAP series it wasn't burdensome, but when
+failures occurred you got all the details you needed still.
+
+=item * Conditionally C<diag>ing in full uncondensed form might eventually be a
+feature at user request.
+
+=back
+
+And the above two in conjunction could be really handy.
+
 =head1 INTEROP WITH TEST::STREAM ECOSYSTEM
 
 =head2 IMPORT STYLE
@@ -251,7 +270,8 @@ L<< C<Test::Stream@1.302026>|https://metacpan.org/source/EXODIST/Test-Stream-1.3
   145: }
 
 L<< C<Test::Stream::Bundle@1.302026>|https://metacpan.org/source/EXODIST/Test-Stream-1.302026/lib/Test/Stream/Bundle.pm >>
-   9: default_export import => sub {
+
+  09: default_export import => sub {
   10:    my $class = shift;
   11:    my @caller = caller;
   12:
