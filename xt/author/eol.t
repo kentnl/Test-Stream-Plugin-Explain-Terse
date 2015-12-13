@@ -13,9 +13,11 @@ my @files = (
     't/00-report-prereqs.t',
     't/basic.t',
     't/bundle_import.t',
+    't/hash_multiline.t',
     't/lib/T/Grapheme.pm',
     't/stream_import.t',
     't/string_long.t',
+    't/string_newline.t',
     't/string_short.t'
 );
 
