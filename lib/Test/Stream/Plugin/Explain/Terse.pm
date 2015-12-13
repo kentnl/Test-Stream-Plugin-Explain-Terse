@@ -4,7 +4,7 @@ use warnings;
 
 package Test::Stream::Plugin::Explain::Terse;
 
-our $VERSION = '0.001000';
+our $VERSION = '0.001001';
 
 # ABSTRACT: Dump anything in a single line in 80 characters or fewer
 
@@ -54,7 +54,7 @@ Test::Stream::Plugin::Explain::Terse - Dump anything in a single line in 80 char
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 

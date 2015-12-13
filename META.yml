@@ -24,7 +24,7 @@ name: Test-Stream-Plugin-Explain-Terse
 provides:
   Test::Stream::Plugin::Explain::Terse:
     file: lib/Test/Stream/Plugin/Explain/Terse.pm
-    version: '0.001000'
+    version: '0.001001'
 requires:
   Data::Dump: '0'
   Test::Stream::Exporter: '0'
@@ -36,4 +36,4 @@ resources:
   bugtracker: https://github.com/kentnl/Test-Stream-Plugin-Explain-Terse/issues
   homepage: https://github.com/kentnl/Test-Stream-Plugin-Explain-Terse
   repository: https://github.com/kentnl/Test-Stream-Plugin-Explain-Terse.git
-version: '0.001000'
+version: '0.001001'
