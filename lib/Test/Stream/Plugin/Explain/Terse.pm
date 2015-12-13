@@ -225,7 +225,7 @@ and finds it seriously impedes automatic prerequisite detection.
 This style is less confusing, but not yet perfectly clear.
 
   use Test::Stream::Bundle::V1;
-  use Test::Stream::Plugin::Explain::Terse;
+  use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
 
 is much more obvious what is happening.
 
