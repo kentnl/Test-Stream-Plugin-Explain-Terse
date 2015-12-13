@@ -171,12 +171,12 @@ becoming more stable.
 =head2 C<Dumper> internals.
 
 This module presently uses L<< C<pp> from C<Data::Dump>|Data::Dump/pp >> as its
-main formater bolted into some simple sub-string operations and newline
+main formatter bolted into some simple sub-string operations and newline
 transformations.
 
 It is planned that this module will switch to using
 L<< C<Data::Dumper>|Data::Dumper >> at some future time, pending on its
-addition of features like range-list reductions, and other nicities
+addition of features like range-list reductions, and other niceties
 C<Data::Dump> offers.
 
 Alas, C<Data::Dump> doesn't support C<sub> de-parsing, and C<Data::Dump> doesn't
@@ -222,7 +222,7 @@ This technique requires a bit of indirection, and requires allowing the
 bundle to clearly communicate the name of the bundles caller to its composed
 plugins while allowing plugins to augment that callers name-space directly.
 
-But to facilliate this, a specific non-C<import> interface must exist on the
+But to facilitate this, a specific non-C<import> interface must exist on the
 plugin which the C<Test::Stream> infrastructure can use to permit explicit
 passing of C<caller()> data without needing to pull cute tricks like
 locally redefining C<caller()> like C<Sub::Uplevel>, or imposing limitations
