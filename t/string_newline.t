@@ -12,6 +12,9 @@ use Data::Dump qw(pp);
   my $pp           = pp($newline_text);
   my $got          = explain_terse($newline_text);
 
+  note "Studying: $got";
+  note "From: $pp";
+
   is( $pp,  q["Hello\nWorld"], "Dumper uses qq expression for \\n" ) or last;
   is( $got, q["Hello\nWorld"], "Newlines come through intact" )      or last;
 
