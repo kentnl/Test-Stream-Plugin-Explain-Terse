@@ -8,7 +8,7 @@ Test::Stream::Plugin::Explain::Terse - Dump anything in a single line in 80 char
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 
