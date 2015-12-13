@@ -15,6 +15,8 @@ use Data::Dump qw( pp );
 
 default_exports qw/ explain_terse /;
 
+no Test::Stream::Exporter;
+
 =func C<explain_terse>
 
   my $data = explain_terse($structure);
