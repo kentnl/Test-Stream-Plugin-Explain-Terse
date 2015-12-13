@@ -63,7 +63,7 @@ version 0.001000
     my $got    = fn( $y );
     note "fn(y) is x";
     note "Studying: fn(y) = " . explain_terse($got);
-    
+
     ok( defined $got, 'is defined' ) or last;
     # more tests here
   }
