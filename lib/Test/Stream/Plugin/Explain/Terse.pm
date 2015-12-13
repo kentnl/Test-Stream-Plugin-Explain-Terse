@@ -163,23 +163,23 @@ characters long.
 
 =head2 C<Test::Stream>
 
-This module intends to interoperate with L<< C<Test::Stream>|Test::Stream >>
+This module intends to inter-operate with L<< C<Test::Stream>|Test::Stream >>
 which this modules author considers still in a heavy state of flux, and so this
 module cannot be considered even remotely stable until some point after that
-becomming more stable.
+becoming more stable.
 
 =head2 C<Dumper> internals.
 
 This module presently uses L<< C<pp> from C<Data::Dump>|Data::Dump/pp >> as its
-main formatter bolted into some simple substring operations and newline
+main formater bolted into some simple sub-string operations and newline
 transformations.
 
 It is planned that this module will switch to using
 L<< C<Data::Dumper>|Data::Dumper >> at some future time, pending on its
-addition of features like range-list reductions, and other niceities
+addition of features like range-list reductions, and other nicities
 C<Data::Dump> offers.
 
-Alas, C<Data::Dump> doesn't support C<sub> deparsing, and C<Data::Dump> doesn't
+Alas, C<Data::Dump> doesn't support C<sub> de-parsing, and C<Data::Dump> doesn't
 have internals that could be considered a canonical reference implementation
 C<Data::Dumper> is.
 
@@ -199,7 +199,7 @@ consuming plugins like this one would be as follows:
   use Test::Stream -V1, 'Explain::Terse';
 
 The author of this module finds such a style confusing an unclear to new users
-and finds it seriously impedes automatic prereq detection.
+and finds it seriously impedes automatic prerequisite detection.
 
   use Test::Stream::Bundle::V1, 'Explain::Terse';
 
@@ -214,16 +214,16 @@ is much more obvious what is happening.
 
 This module presently uses
 L<< C<Test::Stream::Exporter>|Test::Stream::Exporter >> as its exporter
-library. This is for interoperability with the C<Test::Stream> bundling system
+library. This is for inter-operability with the C<Test::Stream> bundling system
 which allows for bundles to compose multiple plugins into a single calling
 class.
 
 This technique requires a bit of indirection, and requires allowing the
 bundle to clearly communicate the name of the bundles caller to its composed
-plugins while allowing plugins to augment that callers namespace directly.
+plugins while allowing plugins to augment that callers name-space directly.
 
-But to faciliate this, a specific non-C<import> interface must exist on the
-plugin which the C<Test::Stream> infrastructure can use to permit explict
+But to facilliate this, a specific non-C<import> interface must exist on the
+plugin which the C<Test::Stream> infrastructure can use to permit explicit
 passing of C<caller()> data without needing to pull cute tricks like
 locally redefining C<caller()> like C<Sub::Uplevel>, or imposing limitations
 on the C<< ->import(@ARGS) >> syntax, and avoids needing to do strange import
