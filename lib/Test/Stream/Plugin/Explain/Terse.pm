@@ -24,9 +24,9 @@ characters long.
 
 =cut
 
-our $MAX_LENGTH  = 80;
-our $RIGHT_CHARS = 1;
-our $ELIDED      = q[...];
+my $MAX_LENGTH  = 80;
+my $RIGHT_CHARS = 1;
+my $ELIDED      = q[...];
 
 sub explain_terse {
   my $content = pp( $_[0] );    # note: using this for now because of list compression
