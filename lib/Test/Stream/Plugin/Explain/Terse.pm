@@ -196,7 +196,7 @@ nicely.
 
 =over 4
 
-=item * It would be nice to stash diag traces in a context and then reveal
+=item * It would be nice to stash C<diag> traces in a context and then reveal
 the entire leg of the test prior to the failure, but only on failure, such that
 when you were just reading a passing TAP series it wasn't burdensome, but when
 failures occurred you got all the details you needed still.
