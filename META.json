@@ -1,5 +1,5 @@
 {
-   "abstract" : "Dump anything in a single line less than 80 characters",
+   "abstract" : "Dump anything in a single line in 80 characters or fewer",
    "author" : [
       "Kent Fredric <kentnl@cpan.org>"
    ],
@@ -129,6 +129,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kentnl/Test-Stream-Plugin-Explain-Terse/issues"
+      },
+      "homepage" : "https://github.com/kentnl/Test-Stream-Plugin-Explain-Terse",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentnl/Test-Stream-Plugin-Explain-Terse.git",
+         "web" : "https://github.com/kentnl/Test-Stream-Plugin-Explain-Terse"
+      }
+   },
    "version" : "0.001000",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"

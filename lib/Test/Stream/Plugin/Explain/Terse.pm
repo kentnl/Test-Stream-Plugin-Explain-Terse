@@ -6,7 +6,7 @@ package Test::Stream::Plugin::Explain::Terse;
 
 our $VERSION = '0.001000';
 
-# ABSTRACT: Dump anything in a single line less than 80 characters
+# ABSTRACT: Dump anything in a single line in 80 characters or fewer
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -14,6 +14,8 @@ use Test::Stream::Exporter qw/ default_exports import /;
 use Data::Dump qw( pp );
 
 default_exports qw/ explain_terse /;
+
+no Test::Stream::Exporter;
 
 
 
@@ -29,8 +31,8 @@ use constant RIGHT_CHARS => 1;
 use constant ELIDED      => q[...];
 
 sub explain_terse {
-  my $content = pp( $_[0] );    # note: using this for now because of list compression
-  $content =~ s/\n//sxg;        # nuke literal newlines.
+  my $content = pp( $_[0] );       # note: using this for now because of list compression
+  $content =~ s/\s*\n\s*/ /sxg;    # nuke literal newlines and swallow excess space.
   return $content if length $content <= MAX_LENGTH;
 
   return ( substr $content, 0, MAX_LENGTH - ( length ELIDED ) - RIGHT_CHARS ) . ELIDED
@@ -48,7 +50,7 @@ __END__
 
 =head1 NAME
 
-Test::Stream::Plugin::Explain::Terse - Dump anything in a single line less than 80 characters
+Test::Stream::Plugin::Explain::Terse - Dump anything in a single line in 80 characters or fewer
 
 =head1 VERSION
 
