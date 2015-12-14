@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::Stream -V1, 'Explain::Terse';
+use Test::Stream 1.302025 -V1, 'Explain::Terse'; # can_ok
 
 # ABSTRACT: Make sure the magic Test::Stream API works with us.
 
