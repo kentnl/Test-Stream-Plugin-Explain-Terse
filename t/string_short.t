@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 
+use Test::Stream 1.302025 ();    # Core.cmp_ok
 use Test::Stream::Bundle::V1;
 use Test::Stream::Plugin::Explain::Terse;
 use Test::Stream::Plugin::SRand;
