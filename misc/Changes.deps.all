@@ -4,3 +4,6 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / test requires]
  - Test::Stream::Plugin::Compare
  - Test::Stream::Plugin::Core
+
+ [Changed / test requires]
+ - Test::Stream 0 → 1.302025
