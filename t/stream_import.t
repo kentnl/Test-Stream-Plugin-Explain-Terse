@@ -1,10 +1,7 @@
 use strict;
 use warnings;
 
-use Test::Stream -V1,
-  'Explain::Terse' => [],
-  'Core'           => [ 'ok', 'diag', 'can_ok', 'done_testing' ];    # can_ok wasn't exported by default
-                                                                     # before 1.302025
+use Test::Stream -V1, 'Explain::Terse';
 
 # ABSTRACT: Make sure the magic Test::Stream API works with us.
 
