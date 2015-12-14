@@ -114,8 +114,10 @@
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
             "Test::More" : "0.89",
-            "Test::Stream" : "0",
+            "Test::Stream" : "1.302025",
             "Test::Stream::Bundle::V1" : "0",
+            "Test::Stream::Plugin::Compare" : "0",
+            "Test::Stream::Plugin::Core" : "0",
             "Test::Stream::Plugin::SRand" : "0",
             "lib" : "0",
             "perl" : "5.006"
@@ -125,7 +127,7 @@
    "provides" : {
       "Test::Stream::Plugin::Explain::Terse" : {
          "file" : "lib/Test/Stream/Plugin/Explain/Terse.pm",
-         "version" : "0.001000"
+         "version" : "0.001001"
       }
    },
    "release_status" : "stable",
@@ -140,7 +142,7 @@
          "web" : "https://github.com/kentnl/Test-Stream-Plugin-Explain-Terse"
       }
    },
-   "version" : "0.001000",
+   "version" : "0.001001",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -633,7 +635,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.001000-source",
+                  "tag" : "0.001001-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v"
                },
@@ -724,7 +726,7 @@
                   "branch" : "releases",
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.001000",
+                  "tag" : "0.001001",
                   "tag_format" : "%v",
                   "tag_message" : "v%v"
                },
