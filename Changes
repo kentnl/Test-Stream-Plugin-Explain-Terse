@@ -1,6 +1,6 @@
 Release history for Test-Stream-Plugin-Explain-Terse
 
-0.001002 2015-12-14T11:50:14Z 8e3fc70
+0.001002 2015-12-14T11:51:58Z 3d806dd
 
 0.001001 2015-12-14T11:01:59Z 833d955
  - Import ::Core explicitly stating the need for cmp_ok, which was omitted from default_exports before Test::Stream
