@@ -1,6 +1,6 @@
 Release history for Test-Stream-Plugin-Explain-Terse
 
-0.001001 2015-12-13T11:39:17Z b1da4be
+0.001001 2015-12-14T10:03:13Z ff7327f
  - Newer Test::Stream::Core needed for cmp_ok in default_exports
 
  [Dependencies::Stats]
