@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     "Test::Stream::Plugin::SRand" => 0,
     "lib" => 0
   },
-  "VERSION" => "0.001001",
+  "VERSION" => "0.001002",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
