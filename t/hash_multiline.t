@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 
-use Test::Stream::Bundle::V1;
-use Test::Stream::Plugin::Explain::Terse;
+use Test::Stream::Plugin::Core qw( note cmp_ok done_testing );
+use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
 use Test::Stream::Plugin::SRand;
 use Data::Dump qw(pp);
 

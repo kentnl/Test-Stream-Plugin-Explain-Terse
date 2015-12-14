@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::Stream::Bundle::V1 'Explain::Terse';
+use Test::Stream::Bundle::V1 'Explain::Terse', 'Core' => [ qw( ok can_ok done_testing diag ) ];
 
 # ABSTRACT: Make sure the magic Test::Stream API works with us.
 
