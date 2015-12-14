@@ -1,8 +1,9 @@
 use strict;
 use warnings;
 
-use Test::Stream::Bundle::V1;
-use Test::Stream::Plugin::Explain::Terse;
+use Test::Stream::Plugin::Core qw( can_ok done_testing ok );
+use Test::Stream::Plugin::Compare qw( is );
+use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
 
 # ABSTRACT: Basic self-test
 

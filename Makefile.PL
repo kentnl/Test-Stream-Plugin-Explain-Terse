@@ -29,6 +29,8 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.89",
     "Test::Stream" => "1.302025",
     "Test::Stream::Bundle::V1" => 0,
+    "Test::Stream::Plugin::Compare" => 0,
+    "Test::Stream::Plugin::Core" => 0,
     "Test::Stream::Plugin::SRand" => 0,
     "lib" => 0
   },
@@ -47,6 +49,8 @@ my %FallbackPrereqs = (
   "Test::Stream" => "1.302025",
   "Test::Stream::Bundle::V1" => 0,
   "Test::Stream::Exporter" => 0,
+  "Test::Stream::Plugin::Compare" => 0,
+  "Test::Stream::Plugin::Core" => 0,
   "Test::Stream::Plugin::SRand" => 0,
   "constant" => 0,
   "lib" => 0,

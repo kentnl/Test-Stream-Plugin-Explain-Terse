@@ -2,8 +2,9 @@ use strict;
 use warnings;
 
 use Test::Stream 1.302025 ();    # Core.cmp_ok
-use Test::Stream::Bundle::V1;
-use Test::Stream::Plugin::Explain::Terse;
+use Test::Stream::Plugin::Core qw( ok note cmp_ok done_testing );
+use Test::Stream::Plugin::Compare qw( is );
+use Test::Stream::Plugin::Explain::Terse qw( explain_terse );
 use Test::Stream::Plugin::SRand;
 use Data::Dump qw(pp);
 
